@@ -1,0 +1,36 @@
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a id="menu-home" href="index.html">Home</a></li>
+      <li><a id="menu-offers" href="offers.html">Instant Offers</a></li>
+      <li><a id="menu-shop" href="shop.html">Shop</a></li>
+      <li><a id="menu-about" href="about.html">About</a></li>
+      <li><a id="menu-contact" href="contact.html">Contact</a></li>
+
+      <!-- LANGUAGE DROPDOWN -->
+      <li style="float:right;">
+        <select id="language-select" onchange="changeLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fa">فارسی</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <h1 id="shop-title" data-i18n="shop-title">Shop</h1>
+
+  <p id="shop-text" data-i18n="shop-text">
+    Browse our selection of authentic foods from around the world.
+  </p>
+
+  <p id="shop-text2" data-i18n="shop-text2">
+    Here you can find ingredients and products to make your favorite dishes at home.
+  </p>
+
+  <script src="script.js"></script>
+</body>
+

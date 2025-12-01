@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+
+  <script>
+    const translations = {
+      en: {
+        "menu-home": "Home",
+        "menu-shop": "Shop",
+        "menu-about": "About",
+        "menu-contact": "Contact",
+        "menu-offers": "Instant Offers",
+        "menu-prompt": "Write Your Prompt",
+        "menu-coffee": "Coffee Bar"
+      },
+      de: {
+        "menu-home": "Startseite",
+        "menu-shop": "Shop",
+        "menu-about": "Über uns",
+        "menu-contact": "Kontakt",
+        "menu-offers": "Sofortangebote",
+        "menu-prompt": "Prompt schreiben",
+        "menu-coffee": "Kaffeebar"
+      },
+      fa: {
+        "menu-home": "خانه",
+        "menu-shop": "فروشگاه",
+        "menu-about": "درباره ما",
+        "menu-contact": "تماس با ما",
+        "menu-offers": "پیشنهادات فوری",
+        "menu-prompt": "نوشتن پرامپت",
+        "menu-coffee": "کافه"
+      },
+      ru: {
+        "menu-home": "Главная",
+        "menu-shop": "Магазин",
+        "menu-about": "О нас",
+        "menu-contact": "Контакты",
+        "menu-offers": "Мгновенные предложения",
+        "menu-prompt": "Написать промпт",
+        "menu-coffee": "Кофейный бар"
+      }
+    };
+
+    function changeLanguage(lang) {
+      for (const key in translations[lang]) {
+        const element = document.getElementById(key);
+        if (element) {
+          element.textContent = translations[lang][key];
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <button onclick="window.location.href='index.html'" id="menu-home">Home</button>
+    <button onclick="window.location.href='shop.html'" id="menu-shop">Shop</button>
+    <button onclick="window.location.href='about.html'" id="menu-about">About</button>
+    <button onclick="window.location.href='contact.html'" id="menu-contact">Contact</button>
+    <button onclick="window.location.href='offers.html'" id="menu-offers">Instant Offers</button>
+    <button onclick="window.location.href='prompt.html'" id="menu-prompt">Write Your Prompt</button>
+    <button onclick="window.location.href='coffee.html'" id="menu-coffee">Coffee Bar</button>
+    <button onclick="window.location.href='essence.html'" id="menu-essence">Essence</button>
+
+    <!-- Language buttons -->
+    <button onclick="changeLanguage('en')">EN</button>
+    <button onclick="changeLanguage('de')">DE</button>
+    <button onclick="changeLanguage('fa')">FA</button>
+    <button onclick="changeLanguage('ru')">RU</button>
+  </nav>
+
+  <!-- Hero -->
+  <h1>Welcome to AllCFood 🍴</h1>
+  <p>Your favorite place for discovering food ideas!</p>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Discover the World’s Flavors</h2>
+    <p>Explore food by taste, essence, and culture — find dishes that match your mood, lifestyle, and identity.</p>
+    <button>Start Exploring</button>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="category-card">
+      <h3>🌶️ Taste</h3>
+      <p>Sweet, spicy, sour, or savory? Choose what suits your palate.</p>
+    </div>
+
+    <div class="category-card">
+      <h3>🔥 Essence</h3>
+      <p>Warm or cold energy — discover foods that balance your body and season.</p>
+    </div>
+
+    <div class="category-card">
+      <h3>🥗 Diet</h3>
+      <p>Vegan or non-vegan — choose dishes that match your lifestyle.</p>
+    </div>
+
+    <div class="category-card">
+      <h3>🌶️ Food Allergic</h3>
+      <p>Find foods based on your allergies and sensitivities.</p>
+    </div>
+
+    <div class="category-card">
+      <h3>🌍 Culture</h3>
+      <p>Persian, Italian, Japanese — explore dishes from every culture.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 AllcFood — All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

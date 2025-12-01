@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - AllCfood</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a id="menu-home" href="index.html">Home</a></li>
+      <li><a id="menu-offers" href="offers.html">Instant Offers</a></li>
+      <li><a id="menu-shop" href="shop.html">Shop</a></li>
+      <li><a id="menu-about" href="about.html">About</a></li>
+      <li><a id="menu-contact" href="contact.html">Contact</a></li>
+      <li><a id="menu-prompt" href="prompt.html">Write Your Prompt</a></li>
+
+      <li style="float:right;">
+        <select id="language-select" onchange="changeLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fa">فارسی</option>
+          <option value="ru">Русский</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+
+  <h1 id="about-title">About AllCfood</h1>
+  <p id="about-text">
+    In this website you can find your favorite food from your original country from original producers.
+    Feel free and live like your home in Europe.
+  </p>
+
+  <script src="script.js"></script>
+</body>
+</html>

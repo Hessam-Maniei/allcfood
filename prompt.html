@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Write Your Prompt</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a id="menu-home" href="index.html">Home</a></li>
+      <li><a id="menu-offers" href="offers.html">Instant Offers</a></li>
+      <li><a id="menu-shop" href="shop.html">Shop</a></li>
+      <li><a id="menu-about" href="about.html">About</a></li>
+      <li><a id="menu-contact" href="contact.html">Contact</a></li>
+      <li><a id="menu-prompt" href="prompt.html">Prompt</a></li>
+
+      <!-- LANGUAGE DROPDOWN -->
+      <li style="float:right;">
+        <select id="language-select" onchange="changeLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fa">فارسی</option>
+          <option value="ru">Русский</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <h1 id="prompt-title">Write Your Prompt</h1>
+  <p id="prompt-text">Describe what food you want. We will recommend the best match!</p>
+
+  <!-- LOAD SCRIPT -->
+  <script src="script.js"></script>
+
+</body>
+</html>
