@@ -1,83 +1,196 @@
-<!DOCTYPE html>
-<html lang="en">
+console.log("AllCfood multilingual script active!");
 
-<head>
-    <meta charset="UTF-8">
-    <title>Essence — AllCFood</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+// ---------- TRANSLATIONS ----------
+const translations = {
+  en: {
+    // MENU
+    "menu-home": "Home",
+    "menu-shop": "Shop",
+    "menu-about": "About",
+    "menu-contact": "Contact",
+    "menu-offers": "Instant Offers",
+    "menu-prompt": "Write Your Prompt",
+    "menu-coffee": "Coffee Bar",
 
-<body>
+    // CONTACT PAGE
+    "contact-title": "Welcome to AllCfood Shop",
+    "contact-text": "Here you can write for us instantly.",
 
-    <!-- NAVBAR -->
-    <nav>
-        <ul>
-            <li><a id="menu-home" href="index.html">Home</a></li>
-            <li><a id="menu-offers" href="offers.html">Instant Offers</a></li>
-            <li><a id="menu-shop" href="shop.html">Shop</a></li>
-            <li><a id="menu-about" href="about.html">About</a></li>
-            <li><a id="menu-contact" href="contact.html">Contact</a></li>
-            <li><a id="menu-prompt" href="prompt.html">Prompt</a></li>
+    // OFFERS PAGE
+    "offers-title": "Instant Offers",
+    "offers-description": "Check out our latest deals and special food offers!",
+    "offer1-title": "Spicy Vegan Wrap",
+    "offer1-text": "20% off — today only!",
+    "offer2-title": "Italian Pizza Combo",
+    "offer2-text": "Buy 1 get 1 free 🍕",
 
-            <!-- LANGUAGE DROPDOWN -->
-            <li style="float:right;">
-                <select id="language-select" onchange="changeLanguage(this.value)">
-                    <option value="en">English</option>
-                    <option value="de">Deutsch</option>
-                    <option value="fa">فارسی</option>
-                    <option value="ru">Русский</option>
-                </select>
-            </li>
-        </ul>
-    </nav>
+    // ABOUT PAGE
+    "about-title": "About AllCfood",
+    "about-text": "In this website you can find your favorite food from your original country from original producers. Feel free and live like your home in Europe.",
 
-    <!-- MAIN CONTENT -->
-    <main style="max-width: 900px; margin: 40px auto; padding: 20px;">
+    // SHOP PAGE
+    "shop-title": "Shop",
+    "shop-text": "Browse our selection of authentic foods from around the world.",
+    "shop-text2": "Here you can find ingredients and products to make your favorite dishes at home.",
 
-        <h1 id="essence-title">🔥 Essence</h1>
-        <p id="essence-description">
-            Discover foods based on their natural energy — warm, cold, neutral, yin, yang, or seasonal.
-            Choose an essence type to explore matching dishes.
-        </p>
+    // PROMPT PAGE
+    "prompt-title": "Write Your Prompt",
+    "prompt-text": "Describe what food you want. We will recommend the best match!",
 
-        <!-- Essence Categories -->
-        <section id="essence-categories" style="margin-top: 40px;">
+    // COFFEE PAGE
+    "coffee-title": "Coffee & Tea",
+    "coffee-text": "Explore our exclusive selection of coffees and teas."
+  },
 
-            <div class="essence-card" style="margin-bottom: 20px;">
-                <h2 id="warm-title">🔥 Warm Essence</h2>
-                <p id="warm-desc">Foods that warm the body — suitable for cold seasons or low-energy days.</p>
-            </div>
+  de: {
+    // MENU
+    "menu-home": "Startseite",
+    "menu-shop": "Shop",
+    "menu-about": "Über uns",
+    "menu-contact": "Kontakt",
+    "menu-offers": "Sofortangebote",
+    "menu-prompt": "Prompt schreiben",
+    "menu-coffee": "Kaffeebar",
 
-            <div class="essence-card" style="margin-bottom: 20px;">
-                <h2 id="cold-title">❄️ Cold Essence</h2>
-                <p id="cold-desc">Cooling foods — perfect for summer or high internal heat.</p>
-            </div>
+    // CONTACT PAGE
+    "contact-title": "Willkommen im AllCfood Shop",
+    "contact-text": "Hier können Sie uns sofort schreiben.",
 
-            <div class="essence-card" style="margin-bottom: 20px;">
-                <h2 id="neutral-title">🌿 Neutral Essence</h2>
-                <p id="neutral-desc">Balanced foods that fit most people and all seasons.</p>
-            </div>
+    // OFFERS PAGE
+    "offers-title": "Sofortangebote",
+    "offers-description": "Sehen Sie sich unsere neuesten Angebote und Spezialaktionen an!",
+    "offer1-title": "Würziger veganer Wrap",
+    "offer1-text": "20% Rabatt — nur heute!",
+    "offer2-title": "Italienisches Pizza-Kombo",
+    "offer2-text": "Kaufe 1, erhalte 1 gratis 🍕",
 
-            <div class="essence-card" style="margin-bottom: 20px;">
-                <h2 id="yin-title">🌙 Yin Essence</h2>
-                <p id="yin-desc">Moist, cooling, soft foods that help calm the body.</p>
-            </div>
+    // ABOUT PAGE
+    "about-title": "Über AllCfood",
+    "about-text": "Auf dieser Website finden Sie Ihre Lieblingsgerichte aus Ihrem Heimatland von ursprünglichen Herstellern. Fühlen Sie sich frei und leben Sie wie zu Hause in Europa.",
 
-            <div class="essence-card" style="margin-bottom: 20px;">
-                <h2 id="yang-title">☀️ Yang Essence</h2>
-                <p id="yang-desc">Warming, energizing foods that strengthen digestion and vitality.</p>
-            </div>
+    // SHOP PAGE
+    "shop-title": "Shop",
+    "shop-text": "Stöbern Sie in unserer Auswahl an authentischen Lebensmitteln aus aller Welt.",
+    "shop-text2": "Hier finden Sie Zutaten und Produkte, um Ihre Lieblingsgerichte zu Hause zuzubereiten.",
 
-            <div class="essence-card" style="margin-bottom: 20px;">
-                <h2 id="seasonal-title">🍃 Seasonal Essence</h2>
-                <p id="seasonal-desc">Foods that match the energy and climate of each season.</p>
-            </div>
+    // PROMPT PAGE
+    "prompt-title": "Prompt schreiben",
+    "prompt-text": "Beschreiben Sie das gewünschte Essen. Wir empfehlen die beste Option!",
 
-        </section>
+    // COFFEE PAGE
+    "coffee-title": "Kaffee & Tee",
+    "coffee-text": "Entdecken Sie unsere exklusive Auswahl an Kaffees und Tees."
+  },
 
-    </main>
+  fa: {
+    // MENU
+    "menu-home": "خانه",
+    "menu-shop": "فروشگاه",
+    "menu-about": "درباره ما",
+    "menu-contact": "تماس با ما",
+    "menu-offers": "پیشنهادهای فوری",
+    "menu-prompt": "نوشتن پرامپت",
+    "menu-coffee": "کافی‌بار",
 
-    <script src="js/script.js"></script>
+    // CONTACT PAGE
+    "contact-title": "به فروشگاه AllCfood خوش آمدید",
+    "contact-text": "اینجا می‌توانید فوراً برای ما بنویسید.",
 
-</body>
-</html>
+    // OFFERS PAGE
+    "offers-title": "پیشنهادهای فوری",
+    "offers-description": "جدیدترین تخفیف‌ها و پیشنهادهای غذایی را اینجا ببینید!",
+    "offer1-title": "رپ وگان تند",
+    "offer1-text": "۲۰٪ تخفیف — فقط امروز!",
+    "offer2-title": "پیتزا ایتالیایی",
+    "offer2-text": "یک بخر، یکی رایگان 🍕",
+
+    // ABOUT PAGE
+    "about-title": "درباره آل‌سی‌فود",
+    "about-text": "در این وب‌سایت می‌توانید غذای مورد علاقه از کشور خود را از تولیدکنندگان اصلی پیدا کنید. آزاد باشید و مثل خانه خود در اروپا زندگی کنید.",
+
+    // SHOP PAGE
+    "shop-title": "فروشگاه",
+    "shop-text": "از میان مجموعه‌ای از غذاهای اصیل کشورهای مختلف انتخاب کنید.",
+    "shop-text2": "اینجا می‌توانید مواد اولیه و محصولات لازم برای تهیه غذاهای مورد علاقه خود را پیدا کنید.",
+
+    // PROMPT PAGE
+    "prompt-title": "نوشتن پرامپت",
+    "prompt-text": "غذای مورد نظر خود را توصیف کنید. ما بهترین پیشنهاد را ارائه می‌دهیم!",
+
+    // COFFEE PAGE
+    "coffee-title": "قهوه و چای",
+    "coffee-text": "مجموعه‌ای از قهوه‌ها و چای‌های ویژه را بررسی کنید."
+  },
+
+  ru: {
+    // MENU
+    "menu-home": "Главная",
+    "menu-shop": "Магазин",
+    "menu-about": "О нас",
+    "menu-contact": "Контакты",
+    "menu-offers": "Мгновенные предложения",
+    "menu-prompt": "Написать промпт",
+    "menu-coffee": "Кофейный бар",
+
+    // CONTACT PAGE
+    "contact-title": "Добро пожаловать в магазин AllCfood",
+    "contact-text": "Здесь вы можете написать нам мгновенно.",
+
+    // OFFERS PAGE
+    "offers-title": "Мгновенные предложения",
+    "offers-description": "Посмотрите наши последние акции и специальные предложения!",
+    "offer1-title": "Острый веганский ролл",
+    "offer1-text": "Скидка 20% — только сегодня!",
+    "offer2-title": "Итальянская пицца-комбо",
+    "offer2-text": "Купи 1 — получи 1 бесплатно 🍕",
+
+    // ABOUT PAGE
+    "about-title": "О AllCfood",
+    "about-text": "Здесь вы найдете любимую еду из вашей страны от оригинальных производителей. Чувствуйте себя как дома в Европе.",
+
+    // SHOP PAGE
+    "shop-title": "Магазин",
+    "shop-text": "Изучите наш ассортимент аутентичных продуктов со всего мира.",
+    "shop-text2": "Здесь вы найдете ингредиенты и продукты для любимых блюд дома.",
+
+    // PROMPT PAGE
+    "prompt-title": "Написать промпт",
+    "prompt-text": "Опишите, какую еду вы хотите. Мы подберем лучший вариант!",
+
+    // COFFEE PAGE
+    "coffee-title": "Кофе и чай",
+    "coffee-text": "Откройте для себя наш эксклюзивный выбор кофе и чая."
+  }
+};
+
+// ---------- LANGUAGE SWITCH ----------
+function changeLanguage(lang) {
+  localStorage.setItem("language", lang);
+
+  const text = translations[lang];
+  if (!text) return;
+
+  for (const key in text) {
+    const el = document.getElementById(key);
+    if (el) el.textContent = text[key];
+  }
+
+  // RTL SUPPORT (Persian)
+  if (lang === "fa") {
+    document.body.style.direction = "rtl";
+    document.body.style.textAlign = "right";
+  } else {
+    document.body.style.direction = "ltr";
+    document.body.style.textAlign = "left";
+  }
+}
+
+// ---------- LOAD SAVED LANGUAGE ----------
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("language") || "en";
+
+  const select = document.getElementById("language-switcher");
+  if (select) select.value = savedLang;
+
+  changeLanguage(savedLang);
+});
